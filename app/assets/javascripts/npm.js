@@ -1,7 +1,7 @@
-//= require transition
-//= require alert
-//= require button
-//= require carousel
+//= require transition.js
+//= require alert.js
+//= require button.js
+//= require carousel.js
 //= require collapse.js
 //= require dropdown.js
 //= require modal.js
