@@ -53,19 +53,14 @@ ActiveRecord::Schema.define(version: 20160307151152) do
     t.string   "charges"
     t.string   "review"
     t.string   "category"
-    t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
-
-  add_index "clubs", ["user_id", "created_at"], name: "index_clubs_on_user_id_and_created_at"
-  add_index "clubs", ["user_id"], name: "index_clubs_on_user_id"
 
   create_table "events", force: :cascade do |t|
     t.string   "tittle"
     t.string   "date"
     t.string   "address"
-    t.integer  "user_id"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
     t.string   "image_file_name"
@@ -73,24 +68,16 @@ ActiveRecord::Schema.define(version: 20160307151152) do
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
   end
-
-  add_index "events", ["user_id", "created_at"], name: "index_events_on_user_id_and_created_at"
-  add_index "events", ["user_id"], name: "index_events_on_user_id"
 
   create_table "forums", force: :cascade do |t|
     t.string   "question"
     t.string   "answer"
-    t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  add_index "forums", ["user_id", "created_at"], name: "index_forums_on_user_id_and_created_at"
-  add_index "forums", ["user_id"], name: "index_forums_on_user_id"
-
   create_table "galleries", force: :cascade do |t|
     t.string   "name"
-    t.integer  "user_id"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
     t.string   "image_file_name"
@@ -98,9 +85,6 @@ ActiveRecord::Schema.define(version: 20160307151152) do
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
   end
-
-  add_index "galleries", ["user_id", "created_at"], name: "index_galleries_on_user_id_and_created_at"
-  add_index "galleries", ["user_id"], name: "index_galleries_on_user_id"
 
   create_table "products", force: :cascade do |t|
     t.string   "name"
@@ -108,7 +92,6 @@ ActiveRecord::Schema.define(version: 20160307151152) do
     t.string   "colour"
     t.string   "size"
     t.string   "description"
-    t.integer  "user_id"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
     t.string   "image_file_name"
@@ -116,9 +99,6 @@ ActiveRecord::Schema.define(version: 20160307151152) do
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
   end
-
-  add_index "products", ["user_id", "created_at"], name: "index_products_on_user_id_and_created_at"
-  add_index "products", ["user_id"], name: "index_products_on_user_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "first_name"

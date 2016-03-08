@@ -7,10 +7,7 @@ class CreateProducts < ActiveRecord::Migration
       t.string :size
       t.string :description
 
-      t.references :user, index: true, foreign_key: true
-
       t.timestamps null: false
     end
-    add_index :products, [:user_id, :created_at]
   end
 end

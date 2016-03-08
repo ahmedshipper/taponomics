@@ -8,10 +8,7 @@ class CreateClubs < ActiveRecord::Migration
       t.string :review
       t.string :category
 
-      t.references :user, index: true, foreign_key: true
-
       t.timestamps null: false
     end
-    add_index :clubs, [:user_id, :created_at]
   end
 end
