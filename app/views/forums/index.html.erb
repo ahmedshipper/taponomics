@@ -1,0 +1,46 @@
+<div class="container-fluid">
+<div class="forum">
+  <div class="text-center">
+    <h1>All The Problems Posted In The Forum</h1>
+    <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#myModal">What's this?</button>
+  </div>
+</div>
+<%= link_to "Tell Your Problem", new_forum_path, class: "btn btn-success" %>
+
+<% @forums.each do |forum| %>
+<div class="status">
+  <h2><strong>Problem:</strong></h2>
+  <h3><strong><%= forum.question %></strong></h3>
+  <div class="text-center">
+  	<span class="admin"> 
+      | <%= link_to "Show Details", forum %>
+  </span>
+  <div class="meta">
+    <%= link_to time_ago_in_words(forum.created_at) + " ago", forum %> 
+  </div>
+</div>
+<% end %>
+
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header modal-header-success">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h1><i class="fa fa-question"></i> The Taponomics forum</h1>
+      </div>
+      <div class="modal-body">
+        <p>We all face different Mental and Physical Problems everyday in our life, some of these problems are really serious but we don't share it with anybody, and in most of the cases tensions of these problems badly effect our health.
+        	This is a try by Taponomics to solve your Physical and Menatl problem.
+        </p>
+        <P>You can just post your problem or qustion and wait for our experts to give you a realistic solution.</P>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+

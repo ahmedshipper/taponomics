@@ -1,0 +1,41 @@
+<div class="container-fluid">
+<div id="post_show">
+  <h1>
+    <strong><font style="text-transform: capitalize;"><%= @club.name %></strong></font>
+  </h1>
+  <p></p>
+  <p class="username">
+    Added In The Category of
+    <strong><font style="text-transform: capitalize;"><%= @club.category %></strong></font>
+  </p>
+  <div class="clearfix">
+    <div class="post_image_description">
+      <h6><img src="/assets/club.jpg" alt="Clubs Gym Martial Art taponomics" height="280" width="500"></h6>
+      <div class="description">
+        Services They Provide:
+        <%= simple_format(@club.services) %>
+      </div>
+    </div>
+<h2>Details</h2>
+        <div class="table-responsive">
+          <table class="table">
+            <tbody>
+              <tr>
+                <td><strong>Club Address:</strong></td>
+                <td><%= @club.address %></td>
+              </tr>
+              <tr>
+                <td><strong>Charges:</strong></td>
+                <td><%= @club.charges %></td>
+              </tr>
+              <tr>
+                <td><strong>What People Say:</strong></td>
+                <td><%= @club.review %></td>
+              </tr>
+            </tbody>
+          </table>
+  </div>
+ </div>
+</div>
+
+
