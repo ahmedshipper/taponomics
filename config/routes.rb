@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get 'static_pages/homepage'
 
   get 'static_pages/dashboard'
+  get 'static_pages/uc'
 
   resources :clubs do
     get '/clubs/:id', to: 'clubs#show'
@@ -17,6 +18,7 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-    root 'static_pages#homepage'
+    root 'static_pages#uc'
 
 end
+
